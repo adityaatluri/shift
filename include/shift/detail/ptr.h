@@ -32,11 +32,18 @@ namespace shift {
 			T val = ptr[tid];
 			return __shfl(val, index);
 		}
+		
 		__device__ inline T& operator[](int index) {
 			return ptr[index];
 		}
-    __device__ inline T operator()(int index, int threadId) {
+		
+		__device__ inline T operator()(int index, int threadId) const {
 			return __shfl(ptr[threadId], index);
+		}
+
+		__device__ inline T& operator()(int index, int threadId) {
+			ptr[index] = __shfl(ptr[threadId], index);
+			return ptr[index];
 		}
 	};
 
