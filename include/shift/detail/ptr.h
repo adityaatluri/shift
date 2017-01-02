@@ -26,11 +26,9 @@ namespace shift {
 	struct coalesced_ptr {
 		T* ptr;
 		coalesced_ptr(T* ptr) : ptr(ptr) {}
-
+		
 		__device__ inline T operator[](int index) const {
-			int tid = threadIdx.x + blockIdx.x * blockDim.x;
-			T val = ptr[tid];
-			return __shfl(val, index);
+			return ptr[index];
 		}
 		
 		__device__ inline T& operator[](int index) {
