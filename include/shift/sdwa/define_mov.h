@@ -43,19 +43,17 @@ struct sdwa_op {
 
 template<>
 struct sdwa_op<int, byte_0, byte_0, byte_0, op_mov>{
-  __device__ int operator()(int val) {
+  __device__ inline int operator()(int val) {
     return __shift_sdwa_mov_00_00_00_int(val);
   }
 };
 
 template<>
 struct sdwa_op<int, byte_0, byte_1, byte_0, op_mov>{
-  __device__ int operator()(int val) {
+  __device__ inline int operator()(int val) {
     return __shift_sdwa_mov_00_10_00_int(val);
   }
 };
-
-
 
 } // end namespace shift
 
