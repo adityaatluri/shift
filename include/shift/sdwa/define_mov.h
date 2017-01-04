@@ -27,19 +27,29 @@ typedef enum {
   op_mov = 0,
 } op_type;
 
-template<typename T, int dst_sel, int src0_sel, int src1_sel, op_type type>
+typedef enum {
+  byte_0 = 0,
+  byte_1 = 1,
+  byte_2 = 2,
+  byte_3 = 3,
+  word_0 = 4,
+  word_1 = 5,
+  dword = 6
+} sdwa_sel;
+
+template<typename T, sdwa_sel dst_sel, sdwa_sel src0_sel, sdwa_sel src1_sel, op_type type>
 struct sdwa_op {
 };
 
 template<>
-struct sdwa_op<int, 0, 0, 0, op_mov>{
+struct sdwa_op<int, byte_0, byte_0, byte_0, op_mov>{
   __device__ int operator()(int val) {
     return __shift_sdwa_mov_00_00_00_int(val);
   }
 };
 
 template<>
-struct sdwa_op<int, 0, 1, 0, op_mov>{
+struct sdwa_op<int, byte_0, byte_1, byte_0, op_mov>{
   __device__ int operator()(int val) {
     return __shift_sdwa_mov_00_10_00_int(val);
   }
