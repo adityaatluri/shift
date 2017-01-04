@@ -30,7 +30,7 @@ THE SOFTWARE.
 __global__ void Mov(hipLaunchParm lp, int *Ind, int *Outd) {
   int tid = hipThreadIdx_x + hipBlockIdx_x * hipBlockDim_x;
   int In = Ind[tid];
-  shift::sdwa_op<int, shift::byte_0, shift::byte_1, shift::byte_0, shift::op_mov> move_byte1;
+  shift::sdwa_op<shift::op_mov, int, shift::byte_0, shift::unused_pad, shift::byte_1, 0, shift::byte_0, 0> move_byte1;
   Outd[tid] = move_byte1(In);
 }
 

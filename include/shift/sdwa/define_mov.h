@@ -29,27 +29,33 @@ typedef enum {
 
 typedef enum {
   byte_0 = 0,
-  byte_1 = 1,
-  byte_2 = 2,
-  byte_3 = 3,
-  word_0 = 4,
-  word_1 = 5,
-  dword = 6
+  byte_1,
+  byte_2,
+  byte_3,
+  word_0,
+  word_1,
+  dword
 } sdwa_sel;
 
-template<typename T, sdwa_sel dst_sel, sdwa_sel src0_sel, sdwa_sel src1_sel, op_type type>
+typedef enum {
+  unused_pad = 0,
+  unused_sext,
+  unused_preserve
+} sdwa_unused;
+
+template<typename T, op_type type, sdwa_sel dst_sel, sdwa_unused, dst_unused, sdwa_sel src0_sel, int src0_type, sdwa_sel src1_sel, int src1_type>
 struct sdwa_op {
 };
 
 template<>
-struct sdwa_op<int, byte_0, byte_0, byte_0, op_mov>{
+struct sdwa_op<int, op_mov, byte_0, unused_pad, byte_0, 0, byte_0, 0>{
   __device__ inline int operator()(int val) {
     return __shift_sdwa_mov_00_00_00_int(val);
   }
 };
 
 template<>
-struct sdwa_op<int, byte_0, byte_1, byte_0, op_mov>{
+struct sdwa_op<int, op_mov, byte_0, unused_pad, byte_1, 0, byte_0, 0>{
   __device__ inline int operator()(int val) {
     return __shift_sdwa_mov_00_10_00_int(val);
   }
