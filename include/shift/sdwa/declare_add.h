@@ -102,63 +102,6 @@ extern "C" int __shift_sdwa_addf16_60_50_00_int(int);
 extern "C" int __shift_sdwa_addf16_60_60_00_int(int);
 
 
-extern "C" int __shift_sdwa_addf32_00_00_00_int(int);
-extern "C" int __shift_sdwa_addf32_00_10_00_int(int);
-extern "C" int __shift_sdwa_addf32_00_20_00_int(int);
-extern "C" int __shift_sdwa_addf32_00_30_00_int(int);
-extern "C" int __shift_sdwa_addf32_00_40_00_int(int);
-extern "C" int __shift_sdwa_addf32_00_50_00_int(int);
-extern "C" int __shift_sdwa_addf32_00_60_00_int(int);
-
-extern "C" int __shift_sdwa_addf32_10_00_00_int(int);
-extern "C" int __shift_sdwa_addf32_10_10_00_int(int);
-extern "C" int __shift_sdwa_addf32_10_20_00_int(int);
-extern "C" int __shift_sdwa_addf32_10_30_00_int(int);
-extern "C" int __shift_sdwa_addf32_10_40_00_int(int);
-extern "C" int __shift_sdwa_addf32_10_50_00_int(int);
-extern "C" int __shift_sdwa_addf32_10_60_00_int(int);
-
-extern "C" int __shift_sdwa_addf32_20_00_00_int(int);
-extern "C" int __shift_sdwa_addf32_20_10_00_int(int);
-extern "C" int __shift_sdwa_addf32_20_20_00_int(int);
-extern "C" int __shift_sdwa_addf32_20_30_00_int(int);
-extern "C" int __shift_sdwa_addf32_20_40_00_int(int);
-extern "C" int __shift_sdwa_addf32_20_50_00_int(int);
-extern "C" int __shift_sdwa_addf32_20_60_00_int(int);
-
-extern "C" int __shift_sdwa_addf32_30_00_00_int(int);
-extern "C" int __shift_sdwa_addf32_30_10_00_int(int);
-extern "C" int __shift_sdwa_addf32_30_20_00_int(int);
-extern "C" int __shift_sdwa_addf32_30_30_00_int(int);
-extern "C" int __shift_sdwa_addf32_30_40_00_int(int);
-extern "C" int __shift_sdwa_addf32_30_50_00_int(int);
-extern "C" int __shift_sdwa_addf32_30_60_00_int(int);
-
-extern "C" int __shift_sdwa_addf32_40_00_00_int(int);
-extern "C" int __shift_sdwa_addf32_40_10_00_int(int);
-extern "C" int __shift_sdwa_addf32_40_20_00_int(int);
-extern "C" int __shift_sdwa_addf32_40_30_00_int(int);
-extern "C" int __shift_sdwa_addf32_40_40_00_int(int);
-extern "C" int __shift_sdwa_addf32_40_50_00_int(int);
-extern "C" int __shift_sdwa_addf32_40_60_00_int(int);
-
-extern "C" int __shift_sdwa_addf32_50_00_00_int(int);
-extern "C" int __shift_sdwa_addf32_50_10_00_int(int);
-extern "C" int __shift_sdwa_addf32_50_20_00_int(int);
-extern "C" int __shift_sdwa_addf32_50_30_00_int(int);
-extern "C" int __shift_sdwa_addf32_50_40_00_int(int);
-extern "C" int __shift_sdwa_addf32_50_50_00_int(int);
-extern "C" int __shift_sdwa_addf32_50_60_00_int(int);
-
-extern "C" int __shift_sdwa_addf32_60_00_00_int(int);
-extern "C" int __shift_sdwa_addf32_60_10_00_int(int);
-extern "C" int __shift_sdwa_addf32_60_20_00_int(int);
-extern "C" int __shift_sdwa_addf32_60_30_00_int(int);
-extern "C" int __shift_sdwa_addf32_60_40_00_int(int);
-extern "C" int __shift_sdwa_addf32_60_50_00_int(int);
-extern "C" int __shift_sdwa_addf32_60_60_00_int(int);
-
-
 extern "C" int __shift_sdwa_addu16_00_00_00_int(int);
 extern "C" int __shift_sdwa_addu16_00_10_00_int(int);
 extern "C" int __shift_sdwa_addu16_00_20_00_int(int);
@@ -214,64 +157,6 @@ extern "C" int __shift_sdwa_addu16_60_30_00_int(int);
 extern "C" int __shift_sdwa_addu16_60_40_00_int(int);
 extern "C" int __shift_sdwa_addu16_60_50_00_int(int);
 extern "C" int __shift_sdwa_addu16_60_60_00_int(int);
-
-
-extern "C" int __shift_sdwa_addu32_00_00_00_int(int);
-extern "C" int __shift_sdwa_addu32_00_10_00_int(int);
-extern "C" int __shift_sdwa_addu32_00_20_00_int(int);
-extern "C" int __shift_sdwa_addu32_00_30_00_int(int);
-extern "C" int __shift_sdwa_addu32_00_40_00_int(int);
-extern "C" int __shift_sdwa_addu32_00_50_00_int(int);
-extern "C" int __shift_sdwa_addu32_00_60_00_int(int);
-
-extern "C" int __shift_sdwa_addu32_10_00_00_int(int);
-extern "C" int __shift_sdwa_addu32_10_10_00_int(int);
-extern "C" int __shift_sdwa_addu32_10_20_00_int(int);
-extern "C" int __shift_sdwa_addu32_10_30_00_int(int);
-extern "C" int __shift_sdwa_addu32_10_40_00_int(int);
-extern "C" int __shift_sdwa_addu32_10_50_00_int(int);
-extern "C" int __shift_sdwa_addu32_10_60_00_int(int);
-
-extern "C" int __shift_sdwa_addu32_20_00_00_int(int);
-extern "C" int __shift_sdwa_addu32_20_10_00_int(int);
-extern "C" int __shift_sdwa_addu32_20_20_00_int(int);
-extern "C" int __shift_sdwa_addu32_20_30_00_int(int);
-extern "C" int __shift_sdwa_addu32_20_40_00_int(int);
-extern "C" int __shift_sdwa_addu32_20_50_00_int(int);
-extern "C" int __shift_sdwa_addu32_20_60_00_int(int);
-
-extern "C" int __shift_sdwa_addu32_30_00_00_int(int);
-extern "C" int __shift_sdwa_addu32_30_10_00_int(int);
-extern "C" int __shift_sdwa_addu32_30_20_00_int(int);
-extern "C" int __shift_sdwa_addu32_30_30_00_int(int);
-extern "C" int __shift_sdwa_addu32_30_40_00_int(int);
-extern "C" int __shift_sdwa_addu32_30_50_00_int(int);
-extern "C" int __shift_sdwa_addu32_30_60_00_int(int);
-
-extern "C" int __shift_sdwa_addu32_40_00_00_int(int);
-extern "C" int __shift_sdwa_addu32_40_10_00_int(int);
-extern "C" int __shift_sdwa_addu32_40_20_00_int(int);
-extern "C" int __shift_sdwa_addu32_40_30_00_int(int);
-extern "C" int __shift_sdwa_addu32_40_40_00_int(int);
-extern "C" int __shift_sdwa_addu32_40_50_00_int(int);
-extern "C" int __shift_sdwa_addu32_40_60_00_int(int);
-
-extern "C" int __shift_sdwa_addu32_50_00_00_int(int);
-extern "C" int __shift_sdwa_addu32_50_10_00_int(int);
-extern "C" int __shift_sdwa_addu32_50_20_00_int(int);
-extern "C" int __shift_sdwa_addu32_50_30_00_int(int);
-extern "C" int __shift_sdwa_addu32_50_40_00_int(int);
-extern "C" int __shift_sdwa_addu32_50_50_00_int(int);
-extern "C" int __shift_sdwa_addu32_50_60_00_int(int);
-
-extern "C" int __shift_sdwa_addu32_60_00_00_int(int);
-extern "C" int __shift_sdwa_addu32_60_10_00_int(int);
-extern "C" int __shift_sdwa_addu32_60_20_00_int(int);
-extern "C" int __shift_sdwa_addu32_60_30_00_int(int);
-extern "C" int __shift_sdwa_addu32_60_40_00_int(int);
-extern "C" int __shift_sdwa_addu32_60_50_00_int(int);
-extern "C" int __shift_sdwa_addu32_60_60_00_int(int);
-
 
 
 #endif
