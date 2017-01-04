@@ -43,7 +43,7 @@ typedef enum {
   unused_preserve
 } sdwa_unused;
 
-template<typename T, op_type type, sdwa_sel dst_sel, sdwa_unused, dst_unused, sdwa_sel src0_sel, int src0_type, sdwa_sel src1_sel, int src1_type>
+template<typename T, op_type type, sdwa_sel dst_sel, sdwa_unused dst_unused, sdwa_sel src0_sel, int src0_type, sdwa_sel src1_sel, int src1_type>
 struct sdwa_op {
 };
 
