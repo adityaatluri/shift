@@ -17,11 +17,37 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-#ifndef SHIFT_SHIFT_H
-#define SHIFT_SHIFT_H
+#include<iostream>
+#include<hip/hip_runtime.h>
+#include<hip/hip_runtime_api.h>
+#include"shift/shift.h"
 
-#include "detail/ptr.h"
-#include "sdwa/define_mov.h"
-#include "sdwa/declare_mov.h"
+#define VAL 0xFFFFFFFF
 
-#endif // End Header
+#define LEN 64
+#define SIZE LEN<<2
+
+__global__ void Mov(hipLaunchParm lp, int *Ind, int *Outd) {
+  int tid = hipThreadIdx_x + hipBlockIdx_x * hipBlockDim_x;
+  int In = Ind[tid];
+  shift::sdwa_op<int, shift::byte_0, shift::byte_1, shift::byte_0, shift::op_mov> move_byte1;
+  Outd[tid] = move_byte1(In);
+}
+
+int main() {
+  int *In = new int[LEN];
+  int *Out = new int[LEN];
+  for(int i=0;i<LEN;i++){
+    In[i] = VAL;
+    Out[i] = 0;
+  }
+  int *Ind, *Outd;
+  hipMalloc(&Ind, SIZE);
+  hipMalloc(&Outd, SIZE);
+
+  hipMemcpy(Ind, In, SIZE, hipMemcpyHostToDevice);
+  hipMemcpy(Outd, Out, SIZE, hipMemcpyHostToDevice);
+  hipLaunchKernel(Mov, dim3(1,1,1), dim3(LEN,1,1), 0, 0, Ind, Outd);
+  hipMemcpy(Out, Outd, SIZE, hipMemcpyDeviceToHost);
+  std::cout<<std::hex<<Out[10]<<std::endl;
+}
