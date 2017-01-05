@@ -25,5 +25,6 @@ THE SOFTWARE.
 #include "sdwa/define_sin.h"
 #include "sdwa/define_cos.h"
 #include "sdwa/define_sqrt.h"
+#include "sdwa/define_rsq.h"
 
 #endif // End Header
