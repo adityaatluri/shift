@@ -27,5 +27,6 @@ THE SOFTWARE.
 #include "sdwa/define_sqrt.h"
 #include "sdwa/define_rsq.h"
 #include "sdwa/define_rcp.h"
+#include "sdwa/define_log.h"
 
 #endif // End Header
