@@ -26,5 +26,6 @@ THE SOFTWARE.
 #include "sdwa/define_cos.h"
 #include "sdwa/define_sqrt.h"
 #include "sdwa/define_rsq.h"
+#include "sdwa/define_rcp.h"
 
 #endif // End Header
