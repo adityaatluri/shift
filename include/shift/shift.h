@@ -24,5 +24,6 @@ THE SOFTWARE.
 #include "sdwa/define_mov.h"
 #include "sdwa/define_sin.h"
 #include "sdwa/define_cos.h"
+#include "sdwa/define_sqrt.h"
 
 #endif // End Header
