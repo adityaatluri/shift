@@ -28,5 +28,6 @@ THE SOFTWARE.
 #include "sdwa/define_rsq.h"
 #include "sdwa/define_rcp.h"
 #include "sdwa/define_log.h"
+#include "sdwa/define_exp.h"
 
 #endif // End Header

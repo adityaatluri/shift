@@ -3524,5 +3524,709 @@ define i32 @__shift_sdwa_log_60_60_00_int(i32 %in) #1 {
 }
 
 
+; start exp pad
+define i32 @__shift_sdwa_exp_00_00_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_0 dst_unused:UNUSED_PAD src0_sel:BYTE_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_00_10_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_0 dst_unused:UNUSED_PAD src0_sel:BYTE_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_00_20_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_0 dst_unused:UNUSED_PAD src0_sel:BYTE_2","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_00_30_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_0 dst_unused:UNUSED_PAD src0_sel:BYTE_3","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_00_40_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_0 dst_unused:UNUSED_PAD src0_sel:WORD_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_00_50_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_0 dst_unused:UNUSED_PAD src0_sel:WORD_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_00_60_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_0 dst_unused:UNUSED_PAD src0_sel:DWORD","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+; end exp pad
+
+; start exp sext
+
+define i32 @__shift_sdwa_exp_01_00_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_0 dst_unused:UNUSED_SEXT src0_sel:BYTE_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_01_10_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_0 dst_unused:UNUSED_SEXT src0_sel:BYTE_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_01_20_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_0 dst_unused:UNUSED_SEXT src0_sel:BYTE_2","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_01_30_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_0 dst_unused:UNUSED_SEXT src0_sel:BYTE_3","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_01_40_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_0 dst_unused:UNUSED_SEXT src0_sel:WORD_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_01_50_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_0 dst_unused:UNUSED_SEXT src0_sel:WORD_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_01_60_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_0 dst_unused:UNUSED_SEXT src0_sel:DWORD","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+; end exp sext
+
+; start exp preserve
+
+define i32 @__shift_sdwa_exp_02_00_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_0 dst_unused:UNUSED_PRESERVE src0_sel:BYTE_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_02_10_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_0 dst_unused:UNUSED_PRESERVE src0_sel:BYTE_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_02_20_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_0 dst_unused:UNUSED_PRESERVE src0_sel:BYTE_2","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_02_30_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_0 dst_unused:UNUSED_PRESERVE src0_sel:BYTE_3","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_02_40_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_0 dst_unused:UNUSED_PRESERVE src0_sel:WORD_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_02_50_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_0 dst_unused:UNUSED_PRESERVE src0_sel:WORD_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_02_60_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_0 dst_unused:UNUSED_PRESERVE src0_sel:DWORD","=v,v"(i32 %in)
+  ret i32 %1
+}
+; end exp preserve
+
+; start exp pad
+define i32 @__shift_sdwa_exp_10_00_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_1 dst_unused:UNUSED_PAD src0_sel:BYTE_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_10_10_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_1 dst_unused:UNUSED_PAD src0_sel:BYTE_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_10_20_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_1 dst_unused:UNUSED_PAD src0_sel:BYTE_2","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_10_30_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_1 dst_unused:UNUSED_PAD src0_sel:BYTE_3","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_10_40_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_1 dst_unused:UNUSED_PAD src0_sel:WORD_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_10_50_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_1 dst_unused:UNUSED_PAD src0_sel:WORD_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_10_60_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_1 dst_unused:UNUSED_PAD src0_sel:DWORD","=v,v"(i32 %in)
+  ret i32 %1
+}
+; end exp pad
+; start exp sext
+define i32 @__shift_sdwa_exp_11_00_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_1 dst_unused:UNUSED_SEXT src0_sel:BYTE_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_11_10_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_1 dst_unused:UNUSED_SEXT src0_sel:BYTE_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_11_20_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_1 dst_unused:UNUSED_SEXT src0_sel:BYTE_2","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_11_30_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_1 dst_unused:UNUSED_SEXT src0_sel:BYTE_3","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_11_40_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_1 dst_unused:UNUSED_SEXT src0_sel:WORD_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_11_50_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_1 dst_unused:UNUSED_SEXT src0_sel:WORD_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_11_60_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_1 dst_unused:UNUSED_SEXT src0_sel:DWORD","=v,v"(i32 %in)
+  ret i32 %1
+}
+; end exp sext
+
+; start exp preserve
+define i32 @__shift_sdwa_exp_12_00_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_1 dst_unused:UNUSED_PRESERVE src0_sel:BYTE_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_12_10_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_1 dst_unused:UNUSED_PRESERVE src0_sel:BYTE_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_12_20_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_1 dst_unused:UNUSED_PRESERVE src0_sel:BYTE_2","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_12_30_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_1 dst_unused:UNUSED_PRESERVE src0_sel:BYTE_3","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_12_40_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_1 dst_unused:UNUSED_PRESERVE src0_sel:WORD_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_12_50_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_1 dst_unused:UNUSED_PRESERVE src0_sel:WORD_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_12_60_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_1 dst_unused:UNUSED_PRESERVE src0_sel:DWORD","=v,v"(i32 %in)
+  ret i32 %1
+}
+;end exp preserve
+
+; start exp pad
+define i32 @__shift_sdwa_exp_20_00_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_2 dst_unused:UNUSED_PAD src0_sel:BYTE_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_20_10_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_2 dst_unused:UNUSED_PAD src0_sel:BYTE_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_20_20_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_2 dst_unused:UNUSED_PAD src0_sel:BYTE_2","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_20_30_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_2 dst_unused:UNUSED_PAD src0_sel:BYTE_3","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_20_40_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_2 dst_unused:UNUSED_PAD src0_sel:WORD_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_20_50_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_2 dst_unused:UNUSED_PAD src0_sel:WORD_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_20_60_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_2 dst_unused:UNUSED_PAD src0_sel:DWORD","=v,v"(i32 %in)
+  ret i32 %1
+}
+; end exp pad
+
+; start exp sext
+define i32 @__shift_sdwa_exp_21_00_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_2 dst_unused:UNUSED_SEXT src0_sel:BYTE_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_21_10_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_2 dst_unused:UNUSED_SEXT src0_sel:BYTE_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_21_20_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_2 dst_unused:UNUSED_SEXT src0_sel:BYTE_2","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_21_30_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_2 dst_unused:UNUSED_SEXT src0_sel:BYTE_3","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_21_40_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_2 dst_unused:UNUSED_SEXT src0_sel:WORD_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_21_50_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_2 dst_unused:UNUSED_SEXT src0_sel:WORD_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_21_60_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_2 dst_unused:UNUSED_SEXT src0_sel:DWORD","=v,v"(i32 %in)
+  ret i32 %1
+}
+; end exp sext
+
+; start exp preserve
+define i32 @__shift_sdwa_exp_22_00_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_2 dst_unused:UNUSED_PRESERVE src0_sel:BYTE_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_22_10_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_2 dst_unused:UNUSED_PRESERVE src0_sel:BYTE_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_22_20_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_2 dst_unused:UNUSED_PRESERVE src0_sel:BYTE_2","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_22_30_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_2 dst_unused:UNUSED_PRESERVE src0_sel:BYTE_3","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_22_40_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_2 dst_unused:UNUSED_PRESERVE src0_sel:WORD_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_22_50_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_2 dst_unused:UNUSED_PRESERVE src0_sel:WORD_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_22_60_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_2 dst_unused:UNUSED_PRESERVE src0_sel:DWORD","=v,v"(i32 %in)
+  ret i32 %1
+}
+; end exp preserve
+
+; start exp pad
+define i32 @__shift_sdwa_exp_30_00_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_3 dst_unused:UNUSED_PAD src0_sel:BYTE_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_30_10_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_3 dst_unused:UNUSED_PAD src0_sel:BYTE_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_30_20_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_3 dst_unused:UNUSED_PAD src0_sel:BYTE_2","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_30_30_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_3 dst_unused:UNUSED_PAD src0_sel:BYTE_3","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_30_40_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_3 dst_unused:UNUSED_PAD src0_sel:WORD_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_30_50_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_3 dst_unused:UNUSED_PAD src0_sel:WORD_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_30_60_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_3 dst_unused:UNUSED_PAD src0_sel:DWORD","=v,v"(i32 %in)
+  ret i32 %1
+}
+; end exp pad
+; start exp sext
+define i32 @__shift_sdwa_exp_31_00_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_3 dst_unused:UNUSED_SEXT src0_sel:BYTE_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_31_10_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_3 dst_unused:UNUSED_SEXT src0_sel:BYTE_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_31_20_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_3 dst_unused:UNUSED_SEXT src0_sel:BYTE_2","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_31_30_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_3 dst_unused:UNUSED_SEXT src0_sel:BYTE_3","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_31_40_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_3 dst_unused:UNUSED_SEXT src0_sel:WORD_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_31_50_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_3 dst_unused:UNUSED_SEXT src0_sel:WORD_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_31_60_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_3 dst_unused:UNUSED_SEXT src0_sel:DWORD","=v,v"(i32 %in)
+  ret i32 %1
+}
+; end exp sext
+; start exp preserve
+define i32 @__shift_sdwa_exp_32_00_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_3 dst_unused:UNUSED_PAD src0_sel:BYTE_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_32_10_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_3 dst_unused:UNUSED_PRESERVE src0_sel:BYTE_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_32_20_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_3 dst_unused:UNUSED_PRESERVE src0_sel:BYTE_2","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_32_30_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_3 dst_unused:UNUSED_PRESERVE src0_sel:BYTE_3","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_32_40_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_3 dst_unused:UNUSED_PRESERVE src0_sel:WORD_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_32_50_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_3 dst_unused:UNUSED_PRESERVE src0_sel:WORD_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_32_60_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:BYTE_3 dst_unused:UNUSED_PRESERVE src0_sel:DWORD","=v,v"(i32 %in)
+  ret i32 %1
+}
+; end exp preserve
+
+; start exp pad
+define i32 @__shift_sdwa_exp_40_00_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_0 dst_unused:UNUSED_PAD src0_sel:BYTE_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_40_10_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_0 dst_unused:UNUSED_PAD src0_sel:BYTE_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_40_20_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_0 dst_unused:UNUSED_PAD src0_sel:BYTE_2","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_40_30_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_0 dst_unused:UNUSED_PAD src0_sel:BYTE_3","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_40_40_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_0 dst_unused:UNUSED_PAD src0_sel:WORD_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_40_50_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_0 dst_unused:UNUSED_PAD src0_sel:WORD_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_40_60_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_0 dst_unused:UNUSED_PAD src0_sel:DWORD","=v,v"(i32 %in)
+  ret i32 %1
+}
+; end exp pad
+
+; start exp sext
+define i32 @__shift_sdwa_exp_41_00_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_0 dst_unused:UNUSED_SEXT src0_sel:BYTE_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_41_10_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_0 dst_unused:UNUSED_SEXT src0_sel:BYTE_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_41_20_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_0 dst_unused:UNUSED_SEXT src0_sel:BYTE_2","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_41_30_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_0 dst_unused:UNUSED_SEXT src0_sel:BYTE_3","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_41_40_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_0 dst_unused:UNUSED_SEXT src0_sel:WORD_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_41_50_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_0 dst_unused:UNUSED_SEXT src0_sel:WORD_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_41_60_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_0 dst_unused:UNUSED_SEXT src0_sel:DWORD","=v,v"(i32 %in)
+  ret i32 %1
+}
+; end exp sext
+
+; start exp preserve
+define i32 @__shift_sdwa_exp_42_00_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_0 dst_unused:UNUSED_PRESERVE src0_sel:BYTE_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_42_10_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_0 dst_unused:UNUSED_PRESERVE src0_sel:BYTE_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_42_20_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_0 dst_unused:UNUSED_PRESERVE src0_sel:BYTE_2","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_42_30_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_0 dst_unused:UNUSED_PRESERVE src0_sel:BYTE_3","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_42_40_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_0 dst_unused:UNUSED_PRESERVE src0_sel:WORD_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_42_50_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_0 dst_unused:UNUSED_PRESERVE src0_sel:WORD_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_42_60_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_0 dst_unused:UNUSED_PRESERVE src0_sel:DWORD","=v,v"(i32 %in)
+  ret i32 %1
+}
+; end exp preserve
+
+; start exp pad
+define i32 @__shift_sdwa_exp_50_00_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_1 dst_unused:UNUSED_PAD src0_sel:BYTE_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_50_10_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_1 dst_unused:UNUSED_PAD src0_sel:BYTE_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_50_20_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_1 dst_unused:UNUSED_PAD src0_sel:BYTE_2","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_50_30_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_1 dst_unused:UNUSED_PAD src0_sel:BYTE_3","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_50_40_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_1 dst_unused:UNUSED_PAD src0_sel:WORD_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_50_50_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_1 dst_unused:UNUSED_PAD src0_sel:WORD_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_50_60_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_1 dst_unused:UNUSED_PAD src0_sel:DWORD","=v,v"(i32 %in)
+  ret i32 %1
+}
+; end exp pad
+
+; start exp sext
+define i32 @__shift_sdwa_exp_51_00_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_1 dst_unused:UNUSED_SEXT src0_sel:BYTE_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_51_10_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_1 dst_unused:UNUSED_SEXT src0_sel:BYTE_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_51_20_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_1 dst_unused:UNUSED_SEXT src0_sel:BYTE_2","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_51_30_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_1 dst_unused:UNUSED_SEXT src0_sel:BYTE_3","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_51_40_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_1 dst_unused:UNUSED_SEXT src0_sel:WORD_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_51_50_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_1 dst_unused:UNUSED_SEXT src0_sel:WORD_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_51_60_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_1 dst_unused:UNUSED_SEXT src0_sel:DWORD","=v,v"(i32 %in)
+  ret i32 %1
+}
+; end exp sext
+
+; start exp pad
+define i32 @__shift_sdwa_exp_52_00_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_1 dst_unused:UNUSED_PRESERVE src0_sel:BYTE_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_52_10_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_1 dst_unused:UNUSED_PRESERVE src0_sel:BYTE_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_52_20_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_1 dst_unused:UNUSED_PRESERVE src0_sel:BYTE_2","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_52_30_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_1 dst_unused:UNUSED_PRESERVE src0_sel:BYTE_3","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_52_40_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_1 dst_unused:UNUSED_PRESERVE src0_sel:WORD_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_52_50_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_1 dst_unused:UNUSED_PRESERVE src0_sel:WORD_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_52_60_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:WORD_1 dst_unused:UNUSED_PRESERVE src0_sel:DWORD","=v,v"(i32 %in)
+  ret i32 %1
+}
+; end exp preserve
+
+
+define i32 @__shift_sdwa_exp_60_00_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:DWORD dst_unused:UNUSED_PAD src0_sel:BYTE_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_60_10_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:DWORD dst_unused:UNUSED_PAD src0_sel:BYTE_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_60_20_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:DWORD dst_unused:UNUSED_PAD src0_sel:BYTE_2","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_60_30_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:DWORD dst_unused:UNUSED_PAD src0_sel:BYTE_3","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_60_40_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:DWORD dst_unused:UNUSED_PAD src0_sel:WORD_0","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_60_50_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:DWORD dst_unused:UNUSED_PAD src0_sel:WORD_1","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+define i32 @__shift_sdwa_exp_60_60_00_int(i32 %in) #1 {
+  %1 = tail call i32 asm sideeffect "v_exp_f16_sdwa $0, $1 dst_sel:DWORD dst_unused:UNUSED_PAD src0_sel:DWORD","=v,v"(i32 %in)
+  ret i32 %1
+}
+
+
 
 attributes #1 = { alwaysinline nounwind }
