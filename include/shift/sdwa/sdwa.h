@@ -24,6 +24,14 @@ namespace shift{
 
 typedef enum {
   op_mov = 0,
+  op_add = 1,
+  op_cos = 2,
+  op_sin = 3,
+  op_sqrt = 4,
+  op_rsq = 5,
+  op_rcp = 6,
+  op_log = 7,
+  op_exp = 8,
 } op_type;
 
 typedef enum {

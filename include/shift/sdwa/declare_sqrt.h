@@ -61,7 +61,7 @@ extern "C" int __shift_sdwa_sqrt_01_40_00_int(int);
 extern "C" int __shift_sdwa_sqrt_01_50_00_int(int);
 extern "C" int __shift_sdwa_sqrt_01_60_00_int(int);
 
-extern "C" int __shift_sdwa_sqrt_00_00_00_int(int);
+extern "C" int __shift_sdwa_sqrt_02_00_00_int(int);
 extern "C" int __shift_sdwa_sqrt_02_10_00_int(int);
 extern "C" int __shift_sdwa_sqrt_02_20_00_int(int);
 extern "C" int __shift_sdwa_sqrt_02_30_00_int(int);

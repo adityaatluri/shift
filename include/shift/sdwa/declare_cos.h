@@ -61,7 +61,7 @@ extern "C" int __shift_sdwa_cos_01_40_00_int(int);
 extern "C" int __shift_sdwa_cos_01_50_00_int(int);
 extern "C" int __shift_sdwa_cos_01_60_00_int(int);
 
-extern "C" int __shift_sdwa_cos_00_00_00_int(int);
+extern "C" int __shift_sdwa_cos_02_00_00_int(int);
 extern "C" int __shift_sdwa_cos_02_10_00_int(int);
 extern "C" int __shift_sdwa_cos_02_20_00_int(int);
 extern "C" int __shift_sdwa_cos_02_30_00_int(int);
