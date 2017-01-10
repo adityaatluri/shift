@@ -27,6 +27,8 @@ THE SOFTWARE.
 #define LEN 64
 #define SIZE LEN<<2
 
+// Change to Out = shift::sdwa_mov(In, dst<byte_0,pad>, src<byte_1,0>, src<byte_0,0>);
+
 __global__ void Mov(hipLaunchParm lp, int *Ind, int *Outd) {
   int tid = hipThreadIdx_x + hipBlockIdx_x * hipBlockDim_x;
   int In = Ind[tid];
