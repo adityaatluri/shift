@@ -23,7 +23,7 @@ THE SOFTWARE.
 */
 
 """
-funcNames = ["Add","Sub"]
+funcNames = ["add","sub"]
 dataTypes = ["int","float"]
 dataTypeIR = ["i32","float"]
 padType = ["dst","src"]
