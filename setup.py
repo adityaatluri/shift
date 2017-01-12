@@ -42,7 +42,7 @@ def doStrAppend(funcName, e, f, g, h, i, j, k):
     "_" + enumRegSelType[h] + enumSrcUnused[g] + \
     "_" + enumRegSelType[f] + enumSrcUnused[e] + "(" + dataTypes[k] + "," + dataTypes[k] + ");\n"
 
-    string = dataTypes[k] + " " + funcName + "(" + dataTypes[k] + " in1, " + \
+    string = "__device__ static inline " + dataTypes[k] + " " + funcName + "(" + dataTypes[k] + " in1, " + \
     dataTypes[k] + " in2, dst<" + regSelType[j]+","+dstUnused[i]+"> U, " + \
     "src<" + regSelType[h] + "," + srcUnused[g] + "> V, " + "src<" + \
     regSelType[f] +"," + srcUnused[e] + "> W) {\n  " + \
