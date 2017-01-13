@@ -1,5 +1,26 @@
 '''
 Generate headers and llvm ir for different data types and word types
+
+There is only one data type that can be used, that is int.
+Because sdwa on float doesn't sound good.
+Floats, Halfs, Bytes, Shorts can be stored in int and
+use op needed.
+For example,
+
+Out = Add(1, 2, Dst<Byte0,Pad>(), Src<Byte0,0>(), Src<Byte0,0>(), Type<Short>())
+
+maps to
+
+int Add(int in1, int in2, Dst<Byte0,Pad> T, Src<Byte0,0> U, Src<Byte0,0> U, Type<Short> V) {
+  return __shift_sdwa_add_00_00_00_short(in1, in2);
+}
+
+IR:
+define i32 @__shift_sdwa_add_00_00_00_short(i32 %in1, i32 %in2) #1 {
+  %1 = tail call i32 asm sideeffect "v_add_u16 $0, $1, $2 dst_sel:BYTE_0 dst_unused:UNUSED_PAD src0_sel:BYTE_0 src1_sel:BYTE_0","=v,v,v"(i32 %in1, i32 %in2)
+  ret i32 %1
+}
+
 '''
 import os
 
@@ -24,8 +45,10 @@ THE SOFTWARE.
 
 """
 funcNames = ["add","sub"]
-dataTypes = ["int","float"]
-dataTypeIR = ["i32","float"]
+amdgcnISANames = ["v_add_","v_sub_"]
+amdgcnISAType = ["u32","f32","u16"]
+dataTypes = ["int","float","short"]
+dataTypeIR = ["i32","float","i16"]
 padType = ["dst","src"]
 enumPadType = ["0","1"]
 regSelType = ["byte_0","byte_1","byte_2","byte_3","word_0","word_1","dword"]
@@ -36,24 +59,33 @@ templateNames = ["U","V","W"]
 srcUnused = ["0","1","2","3","4","5","6","7"]
 enumSrcUnused = ["0","1","2","3","4","5","6","7"]
 
-def doStrAppend(funcName, e, f, g, h, i, j, k):
-    externString = "extern " + "\"C\" " + dataTypes[k] + " " + \
-    "__sdwa_"+ dataTypes[k] +"_"+ funcName + "_" + enumRegSelType[j] + enumDstUnused[i] + \
-    "_" + enumRegSelType[h] + enumSrcUnused[g] + \
-    "_" + enumRegSelType[f] + enumSrcUnused[e] + "(" + dataTypes[k] + "," + dataTypes[k] + ");\n"
+definei32 = "define i32 @"
+prefixName = "__shift_sdwa_"
 
-    string = "__device__ static inline " + dataTypes[k] + " " + funcName + "(" + dataTypes[k] + " in1, " + \
+def doStrAppend(funcName, e, f, g, h, i, j, k):
+    funcDefineNameString = prefixName + dataTypes[k] +"_"+ funcName + "_" + enumRegSelType[j] + enumDstUnused[i] + \
+    "_" + enumRegSelType[h] + enumSrcUnused[g] + \
+    "_" + enumRegSelType[f] + enumSrcUnused[e]
+
+    irFuncDefine = definei32 + funcDefineNameString + "(" + dataTypeIR[k] + " %\in1, " + dataTypeIR[k] + " %\in2) #1 {" + \
+    "  %1 = tail call " + dataTypeIR[k] + " asm sideeffect " +
+    print(irFuncDefine)
+
+    externString = "extern " + "\"C\"" + dataTypes[k] + " " + \
+    funcDefineNameString + "(" + dataTypes[k] + ", " + dataTypes[k] + ");\n"
+
+    funcDefineString = "__device__ static inline " + dataTypes[k] + " " + funcName + "(" + dataTypes[k] + " in1, " + \
     dataTypes[k] + " in2, dst<" + regSelType[j]+","+dstUnused[i]+"> U, " + \
     "src<" + regSelType[h] + "," + srcUnused[g] + "> V, " + "src<" + \
     regSelType[f] +"," + srcUnused[e] + "> W) {\n  " + \
-    "return __sdwa_" + dataTypes[k] + "_" + funcName + "_" + enumRegSelType[j] + enumDstUnused[i] + \
+    "return " + prefixName + dataTypes[k] + "_" + funcName + "_" + enumRegSelType[j] + enumDstUnused[i] + \
     "_" + enumRegSelType[h] + enumSrcUnused[g] + \
     "_" + enumRegSelType[f] + enumSrcUnused[e] + "(in1, in2);\n}\n"
 
     with open("declare_"+ funcName +".h", "a") as declareFile:
         declareFile.write(externString)
     with open("define_"+ funcName + ".h", "a") as defineFile:
-        defineFile.write(string)
+        defineFile.write(funcDefineString)
 
 def createFunction(Name):
     decFileName = "declare_"+Name+".h"
