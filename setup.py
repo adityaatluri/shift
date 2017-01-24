@@ -44,77 +44,36 @@ THE SOFTWARE.
 */
 
 """
-funcNames = ["add","sub"]
-amdgcnISANames = ["v_add_","v_sub_"]
-amdgcnISAType = ["u32","f32","u16"]
-dataTypes = ["int","float","short"]
-dataTypeIR = ["i32","float","i16"]
-padType = ["dst","src"]
-enumPadType = ["0","1"]
-regSelType = ["byte_0","byte_1","byte_2","byte_3","word_0","word_1","dword"]
-enumRegSelType = ["0","1","2","3","4","5","6"]
-dstUnused = ["pad","sext","preserve"]
-enumDstUnused = ["0","1","2"]
-templateNames = ["U","V","W"]
-srcUnused = ["0","1","2","3","4","5","6","7"]
-enumSrcUnused = ["0","1","2","3","4","5","6","7"]
+fileNamePreFix = ["define","declare"]
+ops = ["Add","Sub"]
 
-definei32 = "define i32 @"
-prefixName = "__shift_sdwa_"
+sdwa_sel = ["Byte0","Byte1","Byte2","Byte3","Word0","Word1","Dword"]
+dst_unused = ["Pad","Sext","Preserve"]
+src_sel = ["0","1","2"]
+Types = ["Char","Short","Half","Int","Float"]
 
-def doStrAppend(funcName, e, f, g, h, i, j, k):
-    funcDefineNameString = prefixName + dataTypes[k] +"_"+ funcName + "_" + enumRegSelType[j] + enumDstUnused[i] + \
-    "_" + enumRegSelType[h] + enumSrcUnused[g] + \
-    "_" + enumRegSelType[f] + enumSrcUnused[e]
+prefixSdwa = "__shift_sdwa_"
 
-    irFuncDefine = definei32 + funcDefineNameString + "(" + dataTypeIR[k] + " %\in1, " + dataTypeIR[k] + " %\in2) #1 {" + \
-    "  %1 = tail call " + dataTypeIR[k] + " asm sideeffect " +
-    print(irFuncDefine)
+def createFunc(i, j, k, l, m, n, o, p):
+    externBody = prefixSdwa + ops[i].lower() + "_" + \
+     str(j) + str(k) + "_" + str(l) + str(m) + "_" + \
+     str(n) + str(o) + "_" + Types[p].lower()
+    externDecl = "extern \"C\" int " + externBody + "(int, int);\n"
+    decl = "int " + ops[i] + "(int in1, int in2, Dst<" + sdwa_sel[j] + \
+    "," + dst_unused[k] + "> T, Src<" + sdwa_sel[l] + \
+    "," + src_sel[m] + "> U, Src<" + sdwa_sel[n] + \
+    "," + src_sel[o] + "> V, Type<" + Types[p] +"> W) {\n" + \
+    "  return " + externBody + \
+     "(in1, in2);\n}\n"
+    print(externDecl)
+    print(decl)
 
-    externString = "extern " + "\"C\"" + dataTypes[k] + " " + \
-    funcDefineNameString + "(" + dataTypes[k] + ", " + dataTypes[k] + ");\n"
-
-    funcDefineString = "__device__ static inline " + dataTypes[k] + " " + funcName + "(" + dataTypes[k] + " in1, " + \
-    dataTypes[k] + " in2, dst<" + regSelType[j]+","+dstUnused[i]+"> U, " + \
-    "src<" + regSelType[h] + "," + srcUnused[g] + "> V, " + "src<" + \
-    regSelType[f] +"," + srcUnused[e] + "> W) {\n  " + \
-    "return " + prefixName + dataTypes[k] + "_" + funcName + "_" + enumRegSelType[j] + enumDstUnused[i] + \
-    "_" + enumRegSelType[h] + enumSrcUnused[g] + \
-    "_" + enumRegSelType[f] + enumSrcUnused[e] + "(in1, in2);\n}\n"
-
-    with open("declare_"+ funcName +".h", "a") as declareFile:
-        declareFile.write(externString)
-    with open("define_"+ funcName + ".h", "a") as defineFile:
-        defineFile.write(funcDefineString)
-
-def createFunction(Name):
-    decFileName = "declare_"+Name+".h"
-    defFileName = "define_"+Name+".h"
-    os.remove(decFileName)
-    os.remove(defFileName)
-    with open(decFileName,"a") as declareFile:
-        declareFile.write(CopyRight)
-        declareFile.write("#ifndef INCLUDE_SHIFT_SDWA_DECLARE_"+Name.upper()+"_H\n")
-        declareFile.write("#define INCLUDE_SHIFT_SDWA_DECLARE_"+Name.upper()+"_H\n\n")
-    with open(defFileName,"a") as defineFile:
-        defineFile.write(CopyRight)
-        defineFile.write("#ifndef INCLUDE_SHIFT_SDWA_DEFINE_"+Name.upper()+"_H\n")
-        defineFile.write("#define INCLUDE_SHIFT_SDWA_DEFINE_"+Name.upper()+"_H\n\n")
-        defineFile.write("#include \"./" + decFileName +"\"\n\n")
-        defineFile.write("namespace shift {\n\n")
-    for k in range(len(dataTypes)):
-        for j in range(len(regSelType)):
-            for i in range(len(dstUnused)):
-                for h in range(len(regSelType)):
-                    for g in range(len(srcUnused)):
-                        for f in range(len(regSelType)):
-                            for e in range(len(srcUnused)):
-                                doStrAppend(Name, e, f, g, h, i, j, k)
-    with open(decFileName,"a") as declareFile:
-        declareFile.write("#endif")
-    with open(defFileName,"a") as defineFile:
-        defineFile.write("}\n\n")
-        defineFile.write("#endif")
-
-if __name__ == "__main__":
-    createFunction("add")
+for i in range(len(ops)):
+    for j in range(len(sdwa_sel)):
+        for k in range(len(dst_unused)):
+            for l in range(len(sdwa_sel)):
+                for m in range(len(src_sel)):
+                    for n in range(len(sdwa_sel)):
+                        for o in range(len(src_sel)):
+                            for p in range(len(Types)):
+                                createFunc(i, j, k, l, m, n, o, p)
