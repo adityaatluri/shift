@@ -1,5 +1,5 @@
 # shift
-Coaleasing, Shuffling data using DPPs for AMD GPUs
+Coaleasing, Shuffling, Sub-Dword operations on data using DPPs for AMD GPUs
 Works only on Fiji and later.
 
 ## Installation
